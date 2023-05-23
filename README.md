@@ -17,4 +17,5 @@ This will solve the problem in which the user is faced with a very large number 
 
 ## notebooks
 - `research/get-embeddings.ipynb` - notebook with exctracting video embeddings using deep learning
+- `./Get latest posts.ipynb` - rerieving unique video links by date from `archive.csv`
 
