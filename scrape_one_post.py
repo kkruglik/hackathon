@@ -10,9 +10,11 @@ logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
 
 channel = "milinfolive"
 message_id = 78558
-api_id = "1562040"
-api_hash = "7942e26857e5eecd993ede591b7ddf14"
-username = "37127290547"
+
+# create app here https://my.telegram.org/apps and add variables
+api_id = ""
+api_hash = ""
+username = ""
 
 file_data = scrape_channel(username, api_id, api_hash, channel=channel, message_id=message_id)
 

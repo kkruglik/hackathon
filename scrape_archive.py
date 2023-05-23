@@ -6,11 +6,12 @@ from app.telegram_scraper import scrape_channel
 
 logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.ERROR)
 
-api_id = "1562040"
-api_hash = "7942e26857e5eecd993ede591b7ddf14"
-username = "37127290547"
-download = False
+# create app here https://my.telegram.org/apps and add variables
+api_id = ""
+api_hash = ""
+username = ""
 
+download = False
 urls = pd.read_csv("archive.csv").url.to_list()
 df = pd.DataFrame()
 

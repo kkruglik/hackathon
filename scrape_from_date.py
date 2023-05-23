@@ -10,13 +10,15 @@ from app.utils import update_archive
 
 logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
 
-date = "2023-05-21"  # inclusive date
+date = "2023-05-15"  # inclusive date
 start_date = datetime.datetime.strptime(date, "%Y-%m-%d").date()  # .replace(tzinfo=timezone.utc)
-api_id = "1562040"
-api_hash = "7942e26857e5eecd993ede591b7ddf14"
-username = "37127290547"
 channels = ["creamy_caprice", "DeepStateUA"]  # add more channels here
 download = False
+
+# create app here https://my.telegram.org/apps and add variables
+api_id = ""
+api_hash = ""
+username = ""
 
 df = pd.DataFrame()
 if not os.path.exists(f"app/scraped_data/{date}"):

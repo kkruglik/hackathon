@@ -7,12 +7,13 @@ from app.telegram_scraper import scrape_channel
 
 logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
 
-api_id = "1562040"
-api_hash = "7942e26857e5eecd993ede591b7ddf14"
-username = "37127290547"
+# create app here https://my.telegram.org/apps and add variables
+api_id = ""
+api_hash = ""
+username = ""
+
 channels = ["creamy_caprice"]
 download = False
-
 df = pd.DataFrame()
 
 for ch in channels:
