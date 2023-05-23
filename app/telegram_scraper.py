@@ -44,7 +44,9 @@ def scrape_channel(
                 message_date = message.date.date()
                 # if start_date and (start_date > message.date.date() <= end_date):
                 #     break
-                if start_date and message.date.date() < start_date:
+                if start_date and message.date.date() > start_date:
+                    continue
+                elif start_date and message.date.date() < start_date:
                     break
 
                 # Extract message metadata
