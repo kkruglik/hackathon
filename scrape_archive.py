@@ -2,7 +2,7 @@ import pandas as pd
 import logging
 
 # local imports
-from .telegram_scraper import scrape_channel
+from app.telegram_scraper import scrape_channel
 
 logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.ERROR)
 

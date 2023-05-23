@@ -12,8 +12,8 @@ def scrape_channel(
     api_id: str,
     api_hash: str,
     channel: str,
-    start_date: datetime = None,
-    end_date: datetime = None,
+    start_date: datetime.date = None,
+    end_date: datetime.date = None,
     message_id: int = None,
     download: bool = False,
 ):
@@ -46,6 +46,7 @@ def scrape_channel(
                 #     break
                 if start_date and message.date.date() < start_date:
                     break
+
                 # Extract message metadata
                 message_text = message.message
                 message_date = message.date
