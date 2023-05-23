@@ -1,4 +1,4 @@
-"""Scrape messages from a channel from a given date till the last post"""
+"""Scrape messages from a channel from a given date"""
 import datetime
 import pandas as pd
 import os
@@ -10,8 +10,14 @@ from app.utils import update_archive
 
 logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
 
-date = "2023-05-15"  # inclusive date
-start_date = datetime.datetime.strptime(date, "%Y-%m-%d").date()  # .replace(tzinfo=timezone.utc)
+# specify a date
+date = "2023-05-15"
+start_date = datetime.datetime.strptime(date, "%Y-%m-%d").date()
+
+# or use yesterday's date
+# start_date = (datetime.datetime.now() - datetime.timedelta(days=1)).date()
+# date = start_date.strftime("%Y-%m-%d")
+
 channels = ["creamy_caprice", "DeepStateUA"]  # add more channels here
 download = False
 
