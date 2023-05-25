@@ -1,22 +1,32 @@
 import pandas as pd
 
-def update_archive(new_data: pd.DataFrame):
+def update_archive(new_data: pd.DataFrame) -> None:
     """
-    Updates the archive with new data without duplicates
+    Updates the archive with new data by removing duplicates and saving the updated archive to a CSV file.
     Args:
         new_data (pandas.DataFrame): The new data to be added to the archive.
     Returns:
         None.
     """
-    archive = pd.read_csv("app/scraped_data/archive.csv",  parse_dates=['message_date'])
-    cols = ['file_size', 'duration', 'width', 'height']
+    archive = pd.read_csv("app/scraped_data/archive.csv", parse_dates=['message_date'])
+    # Columns used to identify duplicates
+    duplicate_cols = ['file_size', 'duration', 'width', 'height']
+
+    # Concatenate the existing archive with new data
     updated_archive = pd.concat([archive, new_data])
+
+    # Sort the combined archive by message date in ascending order
     updated_archive = updated_archive.sort_values(by="message_date", ascending=True)
+
+    # Remove duplicate rows based on the specified columns
     orig_shape = updated_archive.shape[0]
-    updated_archive = updated_archive.drop_duplicates(subset=cols, keep="first").reset_index(drop=True)
+    updated_archive = updated_archive.drop_duplicates(subset=duplicate_cols, keep="first").reset_index(drop=True)
     new_shape = updated_archive.shape[0]
     print(f"Dropped {orig_shape - new_shape} duplicate rows")
+
+    # Save the updated archive to a CSV file
     updated_archive.to_csv("app/scraped_data/archive.csv", index=False)
+
 
 def get_archive_slice(start_date: str = None, end_date: str = None):
     """
