@@ -10,13 +10,13 @@ from app.utils import update_archive
 
 logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
 
-# specify a date
-date = "2023-05-15"
-start_date = datetime.datetime.strptime(date, "%Y-%m-%d").date()
+# specify a date to start scraping from
+# date = "2023-05-15"
+# start_date = datetime.datetime.strptime(date, "%Y-%m-%d").date()
 
 # or use yesterday's date
-# start_date = (datetime.datetime.now() - datetime.timedelta(days=1)).date()
-# date = start_date.strftime("%Y-%m-%d")
+start_date = (datetime.datetime.now() - datetime.timedelta(days=1)).date()
+date = start_date.strftime("%Y-%m-%d")
 
 channels = ["creamy_caprice", "DeepStateUA"]  # add more channels here
 download = False
