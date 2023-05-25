@@ -10,8 +10,8 @@ This will solve the problem in which the user is faced with a very large number 
 - `app/utils.py` - script for updating archive of existing telegram videos without duplicates
 
 ## scripts
-- `./scrape_from_date.py` - a script for getting a list of videos from different telegram channels from a certain date. After scraping, all video data without duplicates is written to the `app/scraping_data/archive.csv`.
-- `./scrape_channel.py` - a script for getting a list of videos from the whole channel
+- `./scrape_from_date.py` - **main script** for getting a list of videos from different telegram channels from a certain date. After scraping, **all video data without duplicates** is written to the `app/scraping_data/archive.csv`.
+- `./scrape_channel.py` - a script for getting a list of videos from the whole channelß
 - `./scrape_cone_post.py` - a script for getting a one video from the channel
 - `./scrape_cone_post.py` - a script for getting list of videos from differents channels
 
